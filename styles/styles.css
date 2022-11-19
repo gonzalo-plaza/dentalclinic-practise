@@ -20,6 +20,19 @@
   src: url("../../fonts/IBMPlexSans-Bold.eot?#iefix") format("embedded-opentype"), url("../../fonts/IBMPlexSans-Bold.woff2") format("woff2"), url("../../fonts/IBMPlexSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal; }
+.header__title {
+  color: #0D4C92; }
+.header__icon {
+  font-size: 1.5625rem;
+  text-decoration: none;
+  margin-right: 1.25rem;
+  color: #0D4C92;
+  transition: color 0.2s; }
+  .header__icon:hover {
+    color: #59C1BD; }
+.header__logo {
+  margin-left: 1.25rem; }
+
 html {
   font-family: 'IBM plex Sans'; }
 

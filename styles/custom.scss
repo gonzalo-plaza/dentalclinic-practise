@@ -1,0 +1,21 @@
+.header{
+    &__title{
+        color: #0D4C92;
+    }
+
+    &__icon{
+        font-size: 1.5625rem;
+        text-decoration: none;
+        margin-right: 1.25rem;
+        color: #0D4C92;
+        transition: color 0.2s;
+
+        &:hover{
+            color: #59C1BD;
+        }
+    }
+
+    &__logo{
+        margin-left: 1.25rem;
+    }
+}

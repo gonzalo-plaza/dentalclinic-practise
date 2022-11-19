@@ -8,15 +8,20 @@
     <title>MedacDent</title>
 </head>
 <body>
-    <header>
+    <header class="d-flex justify-content-between align-items-center py-2 shadow-sm">
         <section>
-            <img src="img/medacdent-horizontal-logo.png" title="MedacDent logo" alt="MedacDent logo"/>
+            <img class="header__logo" src="img/medacdent-horizontal-logo.png" title="MedacDent logo" alt="MedacDent logo" width="200" height="50"/>
         </section>
         <section>
-            <h1>Citas MedacDent</h1>
+            <h1 class="header__title">Citas MedacDent</h1>
         </section>
         <section>
-            <i class="fa-solid fa-user"></i>
+            <a class="header__icon" href="#">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+            <a class="header__icon" href="#">
+                <i class="fa-regular fa-envelope"></i>
+            </a>
         </section>
     </header>
     <main class="container"></main>
