@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <title>MedacDent</title>
 </head>
 <body>
     <header class="header d-flex justify-content-between align-items-center py-2 shadow-sm">
         <section>
-            <img class="header__logo" src="img/medacdent-horizontal-logo.png" title="MedacDent logo" alt="MedacDent logo" width="200" height="50"/>
+            <img class="header__logo" src="assets/img/medacdent-horizontal-logo.png" title="MedacDent logo" alt="MedacDent logo" width="200" height="50"/>
         </section>
         <section>
             <h1 class="header__title">Citas MedacDent</h1>
@@ -24,10 +24,43 @@
             </a>
         </section>
     </header>
-    <main class="container"></main>
+    <main class="main-container container d-flex align-items-center justify-content-center">
+        <form action="" class="row g-3 shadow p-3 bg-body rounded w-50">
+            <h2>Datos de la cita</h2>
+            <div class="col-6">
+                <label class="form-label" for="name">Nombre</label>
+                <input type="text" class="form-control" name="name"/>
+            </div>
+            <div class="col-6">
+                <label class="form-label" for="surname">Apellidos</label>
+                <input type="text" class="form-control" name="surname">
+            </div>
+            <div class="col-6">
+                <label class="form-label" for="phone">Teléfono</label>
+                <input type="text" class="form-control" name="phone" />
+            </div>
+            <div class="col-6">
+                <label class="form-label" for="idnumber">DNI/NIF</label>
+                <input type="text" class="form-control" name="idnumber">
+            </div>
+            <div class="col-6">
+                <label class="form-label" for="birth">Fecha de nacimiento</label>
+                <input type="date" class="form-control" name="birth" />
+            </div>
+            <div class="col-6">
+                <label class="form-label" for="appoinmentDate">Fecha y hora de la cita</label>
+                <input type="datetime-local" class="form-control" name="appoinmentDate" />
+            </div>
+            <div class="col-12">
+                <label class="form-label" for="observations">Observaciones</label>
+                <textarea class="form-control" name="observations" id="form-observations" cols="30" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+        </form>
+    </main>
     <footer class="footer d-flex justify-content-between align-items-center p-2">
         <section class="d-flex justify-content-between align-items-center">
-            <img src="/img/medac-logo.png" alt="Medac" title="Medac" width="30">
+            <img src="assets/img/medac-logo.png" alt="Medac" title="Medac" width="30">
             <p class="footer__text ms-2">Una empresa del grupo Medac</p>
         </section>
         <section>
