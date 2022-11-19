@@ -1,4 +1,6 @@
 .header{
+    max-height: 4.5rem;
+
     &__title{
         color: #0D4C92;
     }
@@ -17,5 +19,34 @@
 
     &__logo{
         margin-left: 1.25rem;
+    }
+}
+
+p{
+    margin-bottom: 0;
+}
+
+.footer{
+    color: white;
+    background-color: #0D4C92;
+    height: 3.475rem;
+    
+    &__icon{
+        text-decoration: none;
+        font-size: 1.5625rem;
+        color: #59C1BD;
+        transition: color 0.2s;
+
+        &:hover{
+            color: #CFF5E7;
+        }
+    }
+
+    &__text{
+        font-weight: 500;
+    }
+
+    &__social-content{
+        width: 8.125rem;
     }
 }
