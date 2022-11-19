@@ -1,6 +1,5 @@
 .header{
     max-height: 4.5rem;
-
     &__title{
         color: #0D4C92;
     }
@@ -24,6 +23,10 @@
 
 p{
     margin-bottom: 0;
+}
+
+.main-container{
+    height: calc(100vh - (127.5px));
 }
 
 .footer{

@@ -38,6 +38,9 @@
 p {
   margin-bottom: 0; }
 
+.main-container {
+  height: calc(100vh - (127.5px)); }
+
 .footer {
   color: white;
   background-color: #0D4C92;
