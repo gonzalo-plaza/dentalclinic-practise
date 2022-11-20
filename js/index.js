@@ -12,3 +12,4 @@ const formObservationsField = document.querySelector('#observations');
 formValidation.checkSimpleField(formNameField);
 formValidation.checkSimpleField(formSurnameField);
 formValidation.checkFieldNumber(formPhoneField);
+formValidation.checkFieldRegex(formIdNumberField, '^[0-9]{8}[a-zA-Z]$');

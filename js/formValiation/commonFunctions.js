@@ -34,8 +34,12 @@ function checkIsNumber(element){
     }
 }
 
-export function checkFieldRegex(element, regex){
-
+export function checkFieldRegex(element, regex, flag = ''){
+    const result = new RegExp(regex, flag);
+    element.addEventListener('blur', (event) =>{
+        const field= event.target;
+        checkEmptyField(field) ? '' : checkRegex(element, result);
+    })
 }
 
 function setValidField(element){
@@ -57,4 +61,12 @@ function removeNotValidField(element){
     element.classList.remove('is-invalid');
         element.nextElementSibling.classList.remove('invalid-feedback');
         element.nextElementSibling.innerText = '';
+}
+
+function checkRegex(element, regex){
+    if(regex.test(element.value) == true){
+        setValidField(element);
+    }else{
+        setNotValidField(element, 'Introduce un DNI válido');
+    }
 }
