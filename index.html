@@ -14,7 +14,7 @@
             <img class="header__logo" src="assets/img/medacdent-horizontal-logo.png" title="MedacDent logo" alt="MedacDent logo" width="200" height="50"/>
         </section>
         <section>
-            <h1 class="header__title">Citas MedacDent</h1>
+            <h1 class="header__title">MedacDent</h1>
         </section>
         <section>
             <a class="header__icon" href="#" title="Asistencia técnica" alt="Asistencia técnica">
@@ -26,37 +26,44 @@
         </section>
     </header>
     <main class="main-container container d-flex align-items-center justify-content-center">
-        <form action="" class="row g-3 shadow p-3 bg-body rounded w-50">
+        <form action="" class="row g-3 shadow p-3 bg-body rounded w-50 js-form">
             <h2 class="form__title">Datos de la cita</h2>
             <div class="col-6">
                 <label class="form-label" for="name">Nombre</label>
-                <input type="text" class="form-control" name="name"/>
+                <input id="name" type="text" class="form-control" name="name"/>
+                <span></span>
             </div>
             <div class="col-6">
                 <label class="form-label" for="surname">Apellidos</label>
-                <input type="text" class="form-control" name="surname">
+                <input id="surname" type="text" class="form-control" name="surname">
+                <span></span>
             </div>
             <div class="col-6">
                 <label class="form-label" for="phone">Teléfono</label>
-                <input type="text" class="form-control" name="phone" />
+                <input id="phone" type="text" class="form-control" name="phone" />
+                <span></span>
             </div>
             <div class="col-6">
                 <label class="form-label" for="idnumber">DNI/NIF</label>
-                <input type="text" class="form-control" name="idnumber">
+                <input id="idnumber" type="text" class="form-control" name="idnumber">
+                <span></span>
             </div>
             <div class="col-6">
                 <label class="form-label" for="birth">Fecha de nacimiento</label>
-                <input type="date" class="form-control" name="birth" />
+                <input id="birth" type="date" class="form-control" name="birth" />
+                <span></span>
             </div>
             <div class="col-6">
-                <label class="form-label" for="appoinmentDate">Fecha y hora de la cita</label>
-                <input type="datetime-local" class="form-control" name="appoinmentDate" />
+                <label class="form-label" for="appointmentDate">Fecha y hora de la cita</label>
+                <input id="appointmentDate" type="datetime-local" class="form-control" name="appointmentDate" />
+                <span></span>
             </div>
             <div class="col-12">
                 <label class="form-label" for="observations">Observaciones</label>
-                <textarea class="form-control" name="observations" id="form-observations" cols="30" rows="5"></textarea>
+                <textarea id="observations" class="form-control" name="observations" id="form-observations" cols="30" rows="5"></textarea>
+                <span></span>
             </div>
-            <button type="submit" class="btn btn-secondary">Sign in</button>
+            <button type="submit" class="btn btn-secondary">Guardar cita</button>
         </form>
     </main>
     <footer class="footer d-flex justify-content-between align-items-center p-2">
@@ -82,5 +89,6 @@
             </a>
         </section>
     </footer>
+    <script type="module" src="js/index.js"></script>
 </body>
 </html>
