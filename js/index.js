@@ -9,8 +9,6 @@ const formBirthField = document.querySelector('#birth');
 const formAppointmentDateField = document.querySelector('#appointmentDate');
 const formObservationsField = document.querySelector('#observations');
 
-const fieldsEmptyCheck = [formNameField, formSurnameField, formPhoneField, formIdNumberField, formBirthField, formAppointmentDateField];
-
-fieldsEmptyCheck.forEach((field) => {
-    formValidation.checkEmptyField(field);
-});
+formValidation.checkSimpleField(formNameField);
+formValidation.checkSimpleField(formSurnameField);
+formValidation.checkFieldNumber(formPhoneField);
