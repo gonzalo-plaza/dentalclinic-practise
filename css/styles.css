@@ -9335,10 +9335,16 @@ p {
   margin-bottom: 0; }
 
 .main-container {
-  height: calc(100vh - (127.5px)); }
+  min-height: calc(100vh - (127.5px));
+  overflow-x: scroll;
+  scroll-snap-align: center;
+  scroll-snap-type: x mandatory; }
+  @media (min-width: 1000px) {
+    .main-container {
+      justify-content: center; } }
 
 .footer {
-  color: white;
+  color: #ffffff;
   background-color: #0D4C92;
   height: 3.475rem; }
   .footer__icon {
@@ -9353,8 +9359,19 @@ p {
   .footer__social-content {
     width: 8.125rem; }
 
-.form__title {
-  color: #0D4C92; }
+.form {
+  margin: 1.5625rem;
+  min-width: 21.875rem;
+  max-width: 37.5rem; }
+  @media (max-width: 769px) {
+    .form {
+      font-size: 12.8px; } }
+  .form__title {
+    color: #0D4C92; }
+
+@media (min-width: 576px) {
+  .container {
+    max-width: none; } }
 
 html {
   font-family: 'IBM plex Sans'; }

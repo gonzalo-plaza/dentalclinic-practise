@@ -33,11 +33,18 @@ p{
 }
 
 .main-container{
-    height: calc(100vh - (127.5px));
+    min-height: calc(100vh - (127.5px));
+    overflow-x: scroll;
+    scroll-snap-align: center;
+    scroll-snap-type: x mandatory;
+
+    @media (min-width: 1000px){
+        justify-content: center;
+    }
 }
 
 .footer{
-    color: white;
+    color: $white-color;
     background-color: $primary;
     height: 3.475rem;
     
@@ -48,7 +55,7 @@ p{
         transition: color 0.2s;
 
         &:hover{
-            color: #CFF5E7;
+            color: $fourth-color;
         }
     }
 
@@ -62,7 +69,20 @@ p{
 }
 
 .form{
+    margin: 1.5625rem;
+    min-width: 21.875rem;
+    max-width: 37.5rem;
+
+    @media (max-width: 769px){
+        font-size: 12.8px;
+    }
     &__title{
         color: $primary;
+    }
+}
+
+.container{
+    @media (min-width: 576px){
+        max-width: none;
     }
 }
