@@ -9335,7 +9335,13 @@ p {
   margin-bottom: 0; }
 
 .main-container {
-  min-height: calc(100vh - (127.5px)); }
+  min-height: calc(100vh - (127.5px));
+  overflow-x: scroll;
+  scroll-snap-align: center;
+  scroll-snap-type: x mandatory; }
+  @media (min-width: 1000px) {
+    .main-container {
+      justify-content: center; } }
 
 .footer {
   color: #ffffff;
@@ -9354,9 +9360,18 @@ p {
     width: 8.125rem; }
 
 .form {
-  margin: 1.5625rem 0rem; }
+  margin: 1.5625rem;
+  min-width: 21.875rem;
+  max-width: 37.5rem; }
+  @media (max-width: 769px) {
+    .form {
+      font-size: 12.8px; } }
   .form__title {
     color: #0D4C92; }
+
+@media (min-width: 576px) {
+  .container {
+    max-width: none; } }
 
 html {
   font-family: 'IBM plex Sans'; }
