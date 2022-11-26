@@ -33,11 +33,11 @@ p{
 }
 
 .main-container{
-    height: calc(100vh - (127.5px));
+    min-height: calc(100vh - (127.5px));
 }
 
 .footer{
-    color: white;
+    color: $white-color;
     background-color: $primary;
     height: 3.475rem;
     
@@ -48,7 +48,7 @@ p{
         transition: color 0.2s;
 
         &:hover{
-            color: #CFF5E7;
+            color: $fourth-color;
         }
     }
 
@@ -62,6 +62,8 @@ p{
 }
 
 .form{
+    margin: 1.5625rem 0rem;
+
     &__title{
         color: $primary;
     }
