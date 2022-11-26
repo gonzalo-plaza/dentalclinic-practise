@@ -1,7 +1,7 @@
 'use strict'
-import * as formValidation from './formValiation/commonFunctions.js';
+import * as formValidation from './formValidation/commonFunctions.js';
 import  Appointment  from './classes/appointmentClass.js';
-import saveAppointment from './formCommon/functions.js';
+import saveAppointment from './appoinmentFunctions/functions.js';
 
 const formNameField = document.querySelector('#name');
 const formSurnameField = document.querySelector('#surname');
