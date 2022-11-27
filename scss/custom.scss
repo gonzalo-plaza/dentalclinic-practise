@@ -51,6 +51,10 @@ p{
         color: #59C1BD;
         transition: color 0.2s;
 
+        @media (max-width: 769px){
+            font-size: 1.2rem;
+        }
+
         &:hover{
             color: $fourth-color;
         }
@@ -58,10 +62,18 @@ p{
 
     &__text{
         font-weight: 500;
+
+        @media (max-width: 769px){
+            font-size: .8125rem;
+        }
     }
 
     &__social-content{
         width: 8.125rem;
+
+        @media (max-width: 769px){
+            width: 7rem;
+        }
     }
 }
 
@@ -86,6 +98,11 @@ p{
 
 .appointments{
     height: 36.75rem;
+
+    @media (max-width: 1200px){
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
     &__table{
         width: 37.5rem;
     }
@@ -129,4 +146,9 @@ p{
         margin-bottom: 1rem;
         width: 94.667%;
     }
+}
+
+.appointment__option{
+    font-size: 18px;
+    padding: 5px;
 }

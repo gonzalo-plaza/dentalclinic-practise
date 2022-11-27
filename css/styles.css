@@ -9350,12 +9350,21 @@ p {
     font-size: 1.5625rem;
     color: #59C1BD;
     transition: color 0.2s; }
+    @media (max-width: 769px) {
+      .footer__icon {
+        font-size: 1.2rem; } }
     .footer__icon:hover {
       color: #CFF5E7; }
   .footer__text {
     font-weight: 500; }
+    @media (max-width: 769px) {
+      .footer__text {
+        font-size: .8125rem; } }
   .footer__social-content {
     width: 8.125rem; }
+    @media (max-width: 769px) {
+      .footer__social-content {
+        width: 7rem; } }
 
 .form {
   margin: 1.5625rem;
@@ -9373,6 +9382,10 @@ p {
 
 .appointments {
   height: 36.75rem; }
+  @media (max-width: 1200px) {
+    .appointments {
+      margin-top: 15px;
+      margin-bottom: 15px; } }
   .appointments__table {
     width: 37.5rem; }
   .appointments__header {
@@ -9397,6 +9410,10 @@ p {
   .appointments__button {
     margin-bottom: 1rem;
     width: 94.667%; }
+
+.appointment__option {
+  font-size: 18px;
+  padding: 5px; }
 
 html {
   font-family: 'IBM plex Sans'; }

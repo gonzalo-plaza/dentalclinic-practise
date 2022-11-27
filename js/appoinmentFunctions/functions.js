@@ -25,7 +25,7 @@ function updateAppoinmentsTable(){
         let appointmentDate = appointments[date].date.slice(0,-10);
         let appointmentHour = appointments[date].date.slice(12,-3);
         let columns = `<td>${appointmentDate}</td>
-        <td>${appointmentHour}</td><td>${appointments[date].name}</td><td>${appointments[date].surname}</td><td>${appointments[date].phone}</td>`;
+        <td>${appointmentHour}</td><td>${appointments[date].name}</td><td>${appointments[date].surname}</td><td>${appointments[date].phone}</td><td><i class="appointment__option fa-solid fa-trash"></i><i class="appointment__option fa-solid fa-pen-to-square"></i></td>`;
         row.innerHTML = columns;
         appointmentBodySelector.appendChild(row);
     }
