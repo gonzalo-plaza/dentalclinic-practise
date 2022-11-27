@@ -9336,9 +9336,7 @@ p {
 
 .main-container {
   min-height: calc(100vh - (127.5px));
-  overflow-x: scroll;
-  scroll-snap-align: center;
-  scroll-snap-type: x mandatory; }
+  overflow: hidden; }
   @media (min-width: 1000px) {
     .main-container {
       justify-content: center; } }
@@ -9372,6 +9370,33 @@ p {
 @media (min-width: 576px) {
   .container {
     max-width: none; } }
+
+.appointments {
+  height: 36.75rem; }
+  .appointments__table {
+    width: 37.5rem; }
+  .appointments__header {
+    text-align: center;
+    border-bottom: 1px solid #A0E4CB; }
+    .appointments__header th {
+      padding: .3125rem;
+      padding-left: 15px;
+      padding-right: 15px; }
+      .appointments__header th:first-child {
+        padding-left: 10px; }
+      .appointments__header th:last-child {
+        padding-right: 10px; }
+  .appointments__row {
+    text-align: center; }
+  .appointments td {
+    padding: 0px .3125rem; }
+  .appointments td:nth-child(odd) {
+    background-color: #CFF5E7; }
+  .appointments td:nth-child(even) {
+    background-color: #A0E4CB; }
+  .appointments__button {
+    margin-bottom: 1rem;
+    width: 94.667%; }
 
 html {
   font-family: 'IBM plex Sans'; }
