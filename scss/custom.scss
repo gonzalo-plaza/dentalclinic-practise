@@ -151,4 +151,9 @@ p{
 .appointment__option{
     font-size: 18px;
     padding: 5px;
+
+    &:hover{
+        cursor: pointer;
+        
+    }
 }
