@@ -8,7 +8,11 @@ export default class Appointment {
         this.dni = dni;
         this.phone = phone;
         this.birth = birth;
-        this.date = date;
+        this.date = new Date(date).toLocaleString();
         this.observations = observations;
+    }
+
+    get getFullDate(){
+        return this.date.toLocaleDateString();
     }
 }

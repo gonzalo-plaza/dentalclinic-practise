@@ -25,51 +25,70 @@
             </a>
         </section>
     </header>
-    <main class="main-container container d-flex align-items-center">
-        <form class="form row g-3 shadow p-3 bg-body rounded js-form">
-            <h2 class="form__title">Datos de la cita</h2>
-            <div class="col-6">
-                <label class="form-label" for="name">Nombre</label>
-                <input id="name" type="text" class="form-control" name="name"/>
-                <span></span>
-            </div>
-            <div class="col-6">
-                <label class="form-label" for="surname">Apellidos</label>
-                <input id="surname" type="text" class="form-control" name="surname">
-                <span></span>
-            </div>
-            <div class="col-6">
-                <label class="form-label" for="phone">Teléfono</label>
-                <input id="phone" type="text" class="form-control" name="phone" />
-                <span></span>
-            </div>
-            <div class="col-6">
-                <label class="form-label" for="idnumber">DNI/NIF</label>
-                <input id="idnumber" type="text" class="form-control" name="idnumber">
-                <span></span>
-            </div>
-            <div class="col-6">
-                <label class="form-label" for="birth">Fecha de nacimiento</label>
-                <input id="birth" type="date" class="form-control" name="birth" />
-                <span></span>
-            </div>
-            <div class="col-6">
-                <label class="form-label" for="appointmentDate">Fecha y hora de la cita</label>
-                <input id="appointmentDate" type="datetime-local" class="form-control" name="appointmentDate" />
-                <span></span>
-            </div>
-            <div class="col-12">
-                <label class="form-label" for="observations">Observaciones</label>
-                <textarea id="observations" class="form-control" name="observations" id="form-observations" cols="30" rows="5"></textarea>
-                <span></span>
-            </div>
-            <button type="submit" class="btn btn-secondary">Guardar cita</button>
-        </form>
+    <main class="main-container container d-flex flex-column flex-xl-row align-items-center">
+        <section class="d-flex align-items-center">
+            <form class="form row g-3 shadow p-3 bg-body rounded js-form">
+                <h2 class="form__title">Datos de la cita</h2>
+                <div class="col-6">
+                    <label class="form-label" for="name">Nombre</label>
+                    <input id="name" type="text" class="form-control" name="name"/>
+                    <span></span>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="surname">Apellidos</label>
+                    <input id="surname" type="text" class="form-control" name="surname">
+                    <span></span>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="phone">Teléfono</label>
+                    <input id="phone" type="text" class="form-control" name="phone" />
+                    <span></span>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="idnumber">DNI/NIF</label>
+                    <input id="idnumber" type="text" class="form-control" name="idnumber">
+                    <span></span>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="birth">Fecha de nacimiento</label>
+                    <input id="birth" type="date" class="form-control" name="birth" />
+                    <span></span>
+                </div>
+                <div class="col-6">
+                    <label class="form-label" for="appointmentDate">Fecha y hora de la cita</label>
+                    <input id="appointmentDate" type="datetime-local" class="form-control" name="appointmentDate" />
+                    <span></span>
+                </div>
+                <div class="col-12">
+                    <label class="form-label" for="observations">Observaciones</label>
+                    <textarea id="observations" class="form-control" name="observations" id="form-observations" cols="30" rows="5"></textarea>
+                    <span></span>
+                </div>
+                <button type="submit" class="btn btn-secondary">Guardar cita</button>
+            </form>
+        </section>
+        <section class="appointments d-flex flex-column align-items-center justify-content-between rounded shadow">
+            <table class="appointments__table">
+                <thead class="appointments__header">
+                    <tr>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Nombre</th>
+                        <th>Apellidos</th>
+                        <th>Teléfono</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody class="appointments__body js-appointments-body">
+                    
+                </tbody>
+            </table>
+            <button class="appointments__button btn btn-secondary">Ver todas las citas</button>
+        </section>
     </main>
     <footer class="footer d-flex justify-content-between align-items-center p-2">
         <section class="d-flex justify-content-between align-items-center">
             <img src="assets/img/medac-logo.png" alt="Medac" title="Medac" width="30">
-            <p class="footer__text ms-2">Una empresa del grupo Medac</p>
         </section>
         <section>
             <p class="footer__text">info@medac.es || 897456789</p>
@@ -89,6 +108,24 @@
             </a>
         </section>
     </footer>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="modal-body">
+
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
     <script type="module" src="js/index.js"></script>
+    <script src="/libs/bootstrap/js/bootstrap.bundle.js"/>
 </body>
 </html>
