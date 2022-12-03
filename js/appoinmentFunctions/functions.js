@@ -1,6 +1,12 @@
 'use strict'
+import deleteAppointmentModal from "./showModal.js";
 const appointmentBodySelector = document.querySelector('.js-appointments-body');
-export default function saveAppointment(Appointment){
+
+/**
+ * Save a new appointment and update the appoinments table
+ * @param {Appointment} Appointment 
+ */
+export function saveAppointment(Appointment){
     if(localStorage.appointments){
         let appointments = JSON.parse(localStorage.appointments);
         appointments[Appointment.id] = Appointment;
@@ -15,10 +21,13 @@ export default function saveAppointment(Appointment){
     }
 }
 
-function updateAppoinmentsTable(){
-    debugger;
+/**
+ * Update the appointments table with the localStorage data
+ */
+export function updateAppoinmentsTable(){
     let appointments = JSON.parse(localStorage.appointments);
     appointmentBodySelector.innerHTML= '';
+
     for(const date in appointments){
         let row = document.createElement('tr');
         row.classList.add('appointments__row');
@@ -26,8 +35,33 @@ function updateAppoinmentsTable(){
         let appointmentDate = appointments[date].date.slice(0,-10);
         let appointmentHour = appointments[date].date.slice(12,-3);
         let columns = `<td>${appointmentDate}</td>
-        <td>${appointmentHour}</td><td>${appointments[date].name}</td><td>${appointments[date].surname}</td><td>${appointments[date].phone}</td><td><i class="appointment__option fa-solid fa-trash js-delet-appointment" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Eliminar cita"></i><i class="appointment__option fa-solid fa-pen-to-square js-edit-appointment" title="Ver y editar cita"></i></td>`;
+        <td>${appointmentHour}</td>
+        <td class="appointment__surname">${appointments[date].name}</td>
+        <td class="appointment__surname">${appointments[date].surname}</td>
+        <td class="test-touch">${appointments[date].phone}</td>
+        <td>
+            <i class="appointment__optiontest-desk fa-sharp fa-solid fa-phone"></i>
+            <i class="appointment__option fa-solid fa-trash js-delet-appointment" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Eliminar cita"></i>
+            <i class="appointment__option fa-solid fa-pen-to-square js-edit-appointment" title="Ver y editar cita"></i></td>`;
         row.innerHTML = columns;
         appointmentBodySelector.appendChild(row);
     }
+    
+    const appointmentDeleteSelector = Object.values(document.getElementsByClassName('js-delet-appointment'));
+    appointmentDeleteSelector.forEach(item => {
+        item.addEventListener('click', deleteAppointment);
+    });
+}
+
+/**
+ * Select the appointment that the user want delete
+ * and show the modal to confirm
+ * @param event 
+ */
+function deleteAppointment(event){
+    let result = event.target.parentNode.parentNode.dataset.id;
+    let appointments = JSON.parse(localStorage.appointments);
+    const appointment = appointments[result];
+    
+    deleteAppointmentModal(appointment);
 }
