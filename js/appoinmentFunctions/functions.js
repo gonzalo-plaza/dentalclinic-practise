@@ -1,7 +1,7 @@
 'use strict'
 import deleteAppointmentModal from "../commons/showModal.js";
 const appointmentBodySelector = document.querySelector('.js-appointments-body');
-export default function saveAppointment(Appointment){
+export function saveAppointment(Appointment){
     if(localStorage.appointments){
         let appointments = JSON.parse(localStorage.appointments);
         appointments[Appointment.id] = Appointment;
@@ -16,7 +16,7 @@ export default function saveAppointment(Appointment){
     }
 }
 
-function updateAppoinmentsTable(){
+export function updateAppoinmentsTable(){
     debugger;
     let appointments = JSON.parse(localStorage.appointments);
     appointmentBodySelector.innerHTML= '';
@@ -27,7 +27,14 @@ function updateAppoinmentsTable(){
         let appointmentDate = appointments[date].date.slice(0,-10);
         let appointmentHour = appointments[date].date.slice(12,-3);
         let columns = `<td>${appointmentDate}</td>
-        <td>${appointmentHour}</td><td>${appointments[date].name}</td><td>${appointments[date].surname}</td><td class="test-touch">${appointments[date].phone}</td><td><i class="test-desk fa-sharp fa-solid fa-phone"></i><i class="appointment__option fa-solid fa-trash js-delet-appointment" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Eliminar cita"></i><i class="appointment__option fa-solid fa-pen-to-square js-edit-appointment" title="Ver y editar cita"></i></td>`;
+        <td>${appointmentHour}</td>
+        <td class="appointment__surname">${appointments[date].name}</td>
+        <td class="appointment__surname">${appointments[date].surname}</td>
+        <td class="test-touch">${appointments[date].phone}</td>
+        <td>
+            <i class="appointment__optiontest-desk fa-sharp fa-solid fa-phone"></i>
+            <i class="appointment__option fa-solid fa-trash js-delet-appointment" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Eliminar cita"></i>
+            <i class="appointment__option fa-solid fa-pen-to-square js-edit-appointment" title="Ver y editar cita"></i></td>`;
         row.innerHTML = columns;
         appointmentBodySelector.appendChild(row);
     }

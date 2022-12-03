@@ -9411,7 +9411,8 @@ p {
     padding: 0px .3125rem; }
     @media (max-width: 575.98px) {
       .appointments td {
-        font-size: 11px; } }
+        font-size: 11px;
+        padding: 0px; } }
   .appointments td:nth-child(odd) {
     background-color: #CFF5E7; }
   .appointments td:nth-child(even) {
@@ -9419,11 +9420,19 @@ p {
   @media (max-width: 991.98px) {
     .appointments td:last-child {
       background-color: #CFF5E7; } }
-  .appointments__button {
-    margin-bottom: 1rem;
-    width: 94.667%; }
+  .appointments__buttons {
+    padding: 1rem;
+    column-gap: 1rem; }
   .appointments__table {
     width: 100%; }
+  @media (max-width: 991.98px) {
+    .appointments__surname {
+      max-width: 3.75rem !important; } }
+  @media (max-width: 991.98px) {
+    .appointments__surname-head {
+      max-width: 3.75rem !important;
+      padding-right: 10px !important;
+      padding-left: 10px !important; } }
 
 .appointment__option {
   font-size: 18px;
