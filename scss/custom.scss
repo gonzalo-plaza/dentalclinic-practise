@@ -98,13 +98,13 @@ p{
 
 .appointments{
     height: 36.75rem;
+    width: 90%;
+    min-width: 21.875rem;
+    max-width: 37.5rem;
 
     @media (max-width: 1200px){
         margin-top: 15px;
         margin-bottom: 15px;
-    }
-    &__table{
-        width: 37.5rem;
     }
 
     &__header{
@@ -115,6 +115,9 @@ p{
             padding: .3125rem;
             padding-left: 15px;
             padding-right: 15px;
+            @include media-breakpoint-down(sm){
+                font-size: 12px;
+            }
 
             &:first-child{
                 padding-left: 10px;
@@ -132,6 +135,9 @@ p{
 
     td{
         padding: 0px .3125rem;
+        @include media-breakpoint-down(sm){
+            font-size: 11px;
+        }
     }
 
     td:nth-child(odd){
@@ -151,6 +157,9 @@ p{
 .appointment__option{
     font-size: 18px;
     padding: 5px;
+    @include media-breakpoint-down(sm){
+        font-size: 14px;
+    }
 
     &:hover{
         cursor: pointer;
@@ -162,4 +171,10 @@ p{
     @include media-breakpoint-down(lg) {
         display: none;
     }
+}
+
+.test-desk{
+    @include media-breakpoint-up(lg) { 
+        display: none !important;
+     }
 }

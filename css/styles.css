@@ -9381,13 +9381,14 @@ p {
     max-width: none; } }
 
 .appointments {
-  height: 36.75rem; }
+  height: 36.75rem;
+  width: 90%;
+  min-width: 21.875rem;
+  max-width: 37.5rem; }
   @media (max-width: 1200px) {
     .appointments {
       margin-top: 15px;
       margin-bottom: 15px; } }
-  .appointments__table {
-    width: 37.5rem; }
   .appointments__header {
     text-align: center;
     border-bottom: 1px solid #A0E4CB; }
@@ -9395,6 +9396,9 @@ p {
       padding: .3125rem;
       padding-left: 15px;
       padding-right: 15px; }
+      @media (max-width: 575.98px) {
+        .appointments__header th {
+          font-size: 12px; } }
       .appointments__header th:first-child {
         padding-left: 10px; }
       .appointments__header th:last-child {
@@ -9403,6 +9407,9 @@ p {
     text-align: center; }
   .appointments td {
     padding: 0px .3125rem; }
+    @media (max-width: 575.98px) {
+      .appointments td {
+        font-size: 11px; } }
   .appointments td:nth-child(odd) {
     background-color: #CFF5E7; }
   .appointments td:nth-child(even) {
@@ -9414,12 +9421,19 @@ p {
 .appointment__option {
   font-size: 18px;
   padding: 5px; }
+  @media (max-width: 575.98px) {
+    .appointment__option {
+      font-size: 14px; } }
   .appointment__option:hover {
     cursor: pointer; }
 
 @media (max-width: 991.98px) {
   .test-touch {
     display: none; } }
+
+@media (min-width: 992px) {
+  .test-desk {
+    display: none !important; } }
 
 html {
   font-family: 'IBM plex Sans'; }
