@@ -157,3 +157,9 @@ p{
         
     }
 }
+
+.test-touch{
+    @include media-breakpoint-down(lg) {
+        display: none;
+    }
+}

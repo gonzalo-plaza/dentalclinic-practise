@@ -9417,6 +9417,10 @@ p {
   .appointment__option:hover {
     cursor: pointer; }
 
+@media (max-width: 991.98px) {
+  .test-touch {
+    display: none; } }
+
 html {
   font-family: 'IBM plex Sans'; }
 

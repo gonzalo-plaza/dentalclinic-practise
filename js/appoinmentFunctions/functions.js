@@ -1,4 +1,5 @@
 'use strict'
+import deleteAppointmentModal from "../commons/showModal.js";
 const appointmentBodySelector = document.querySelector('.js-appointments-body');
 export default function saveAppointment(Appointment){
     if(localStorage.appointments){
@@ -26,8 +27,20 @@ function updateAppoinmentsTable(){
         let appointmentDate = appointments[date].date.slice(0,-10);
         let appointmentHour = appointments[date].date.slice(12,-3);
         let columns = `<td>${appointmentDate}</td>
-        <td>${appointmentHour}</td><td>${appointments[date].name}</td><td>${appointments[date].surname}</td><td>${appointments[date].phone}</td><td><i class="appointment__option fa-solid fa-trash js-delet-appointment" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Eliminar cita"></i><i class="appointment__option fa-solid fa-pen-to-square js-edit-appointment" title="Ver y editar cita"></i></td>`;
+        <td>${appointmentHour}</td><td>${appointments[date].name}</td><td>${appointments[date].surname}</td><td class="test-touch">${appointments[date].phone}</td><td><i class="appointment__option fa-solid fa-trash js-delet-appointment" data-bs-toggle="modal" data-bs-target="#exampleModal" title="Eliminar cita"></i><i class="appointment__option fa-solid fa-pen-to-square js-edit-appointment" title="Ver y editar cita"></i></td>`;
         row.innerHTML = columns;
         appointmentBodySelector.appendChild(row);
+    }
+    const appointmentDeleteSelector = Object.values(document.getElementsByClassName('js-delet-appointment'));
+    appointmentDeleteSelector.forEach(item => {
+        item.addEventListener('click', deleteAppointment);
+    });
+    function deleteAppointment(event){
+        debugger;
+        let result = event.target.parentNode.parentNode.dataset.id;
+        let appointments = JSON.parse(localStorage.appointments);
+        const appointment = appointments[result];
+        
+        deleteAppointmentModal(appointment);
     }
 }
