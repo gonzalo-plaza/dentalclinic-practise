@@ -1,5 +1,10 @@
 'use strict'
 
+
+/**
+ * Show modal to confirm if the user want delete the appointment
+ * @param {Appointment} appointment 
+ */
 export default function deleteAppointmentModal(appointment){
     const modalTitleSelector = document.getElementById('exampleModalLabel');
     const modalBodySelector = document.getElementById('modal-body');
@@ -25,7 +30,7 @@ export default function deleteAppointmentModal(appointment){
     <li>Apellidos: ${appointment.surname}</li>
     <li>Teléfono: ${appointment.phone}</li>
     `;
-    debugger
+
     confirmModalButtonSelector.setAttribute('data-id', appointment.id);
     modalSubtitleElement.textContent = `¿Desea eleminar la siguiente cita?`;
 

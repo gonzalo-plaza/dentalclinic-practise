@@ -1,6 +1,11 @@
 'use strict'
-import deleteAppointmentModal from "../commons/showModal.js";
+import deleteAppointmentModal from "./showModal.js";
 const appointmentBodySelector = document.querySelector('.js-appointments-body');
+
+/**
+ * Save a new appointment and update the appoinments table
+ * @param {Appointment} Appointment 
+ */
 export function saveAppointment(Appointment){
     if(localStorage.appointments){
         let appointments = JSON.parse(localStorage.appointments);
@@ -16,10 +21,13 @@ export function saveAppointment(Appointment){
     }
 }
 
+/**
+ * Update the appointments table with the localStorage data
+ */
 export function updateAppoinmentsTable(){
-    debugger;
     let appointments = JSON.parse(localStorage.appointments);
     appointmentBodySelector.innerHTML= '';
+
     for(const date in appointments){
         let row = document.createElement('tr');
         row.classList.add('appointments__row');
@@ -38,16 +46,22 @@ export function updateAppoinmentsTable(){
         row.innerHTML = columns;
         appointmentBodySelector.appendChild(row);
     }
+    
     const appointmentDeleteSelector = Object.values(document.getElementsByClassName('js-delet-appointment'));
     appointmentDeleteSelector.forEach(item => {
         item.addEventListener('click', deleteAppointment);
     });
-    function deleteAppointment(event){
-        debugger;
-        let result = event.target.parentNode.parentNode.dataset.id;
-        let appointments = JSON.parse(localStorage.appointments);
-        const appointment = appointments[result];
-        
-        deleteAppointmentModal(appointment);
-    }
+}
+
+/**
+ * Select the appointment that the user want delete
+ * and show the modal to confirm
+ * @param event 
+ */
+function deleteAppointment(event){
+    let result = event.target.parentNode.parentNode.dataset.id;
+    let appointments = JSON.parse(localStorage.appointments);
+    const appointment = appointments[result];
+    
+    deleteAppointmentModal(appointment);
 }
