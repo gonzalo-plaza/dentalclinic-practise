@@ -15,6 +15,7 @@ const formObservationsField = document.querySelector('#observations');
 const formSelector = document.querySelector('.js-form');
 const appointmentBodySelector = document.querySelector('.js-appointments-body');
 const appointmentDeleteSelector = Object.values(document.getElementsByClassName('js-delet-appointment'));
+const confirmModalButtonSelector = document.getElementById('modal-confirm-button');
 const todayDate = new Date();
 const newEvent = new Event('updateAppoint');
 
@@ -68,4 +69,15 @@ function updateAppoinmentsTable(){
         deleteAppointmentModal(appointment);
     }
 }
+
+confirmModalButtonSelector.addEventListener('click', function(event){
+    let appointmentId = event.target.dataset.id;
+    debugger;
+    let appointments = JSON.parse(localStorage.appointments);
+    delete appointments[appointmentId];
+
+    localStorage.appointments = JSON.stringify(appointments);
+    updateAppoinmentsTable();
+    $('#exampleModal').modal('hide');
+});
 
