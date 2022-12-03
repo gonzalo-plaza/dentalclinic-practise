@@ -9398,7 +9398,9 @@ p {
       padding-right: 15px; }
       @media (max-width: 575.98px) {
         .appointments__header th {
-          font-size: 12px; } }
+          font-size: 12px;
+          padding-left: 12px;
+          padding-right: 13px; } }
       .appointments__header th:first-child {
         padding-left: 10px; }
       .appointments__header th:last-child {
@@ -9414,9 +9416,14 @@ p {
     background-color: #CFF5E7; }
   .appointments td:nth-child(even) {
     background-color: #A0E4CB; }
+  @media (max-width: 991.98px) {
+    .appointments td:last-child {
+      background-color: #CFF5E7; } }
   .appointments__button {
     margin-bottom: 1rem;
     width: 94.667%; }
+  .appointments__table {
+    width: 100%; }
 
 .appointment__option {
   font-size: 18px;
