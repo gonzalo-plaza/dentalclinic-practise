@@ -6,11 +6,12 @@
  * @param {Appointment} appointment 
  */
 export default function deleteAppointmentModal(appointment){
-    const modalTitleSelector = document.getElementById('exampleModalLabel');
     const modalBodySelector = document.getElementById('modal-body');
+    const modalTitleSelector = document.getElementById('exampleModalLabel');
+    const confirmModalButtonSelector = document.getElementById('modal-confirm-button');
+
     let modalUlElement = document.getElementById('modal-list');
     let modalSubtitleElement = document.getElementById('modal-subtitle');
-    const confirmModalButtonSelector = document.getElementById('modal-confirm-button');
     
     modalTitleSelector.innerHTML = 'Eliminar cita';
     

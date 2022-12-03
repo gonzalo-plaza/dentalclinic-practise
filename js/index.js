@@ -8,12 +8,13 @@ document.addEventListener("DOMContentLoaded", updateAppoinmentsTable);
 
 const todayDate = new Date();
 
-formValidation.checkSimpleField(contants.formNameField);
-formValidation.checkSimpleField(contants.formSurnameField);
-formValidation.checkFieldNumber(contants.formPhoneField);
-formValidation.checkFieldRegex(contants.formIdNumberField, '^[0-9]{8}[a-zA-Z]$');
-formBirthField.setAttribute("max", todayDate.toLocaleDateString('en-CA'));
-formAppointmentDateField.setAttribute("min", todayDate.toISOString().slice(0,-8));
+formValidation.checkSimpleField(constants.formNameField);
+formValidation.checkSimpleField(constants.formSurnameField);
+formValidation.checkFieldNumber(constants.formPhoneField);
+formValidation.checkFieldRegex(constants.formIdNumberField, '^[0-9]{8}[a-zA-Z]$');
+
+constants.formBirthField.setAttribute("max", todayDate.toLocaleDateString('en-CA'));
+constants.formAppointmentDateField.setAttribute("min", todayDate.toISOString().slice(0,-8));
 
 formSelector.addEventListener('submit', function(e){
     e.preventDefault();
