@@ -1,0 +1,108 @@
+.appointments{
+    height: 36.75rem;
+    width: 90%;
+    min-width: 21.875rem;
+    max-width: 37.5rem;
+
+    @media (max-width: 1200px){
+        margin-top: .9375rem;
+        margin-bottom: .9375rem;
+    }
+
+    &__header{
+        text-align: center;
+        border-bottom: 1px solid $third-color;
+    }
+
+    &__head-item{
+        padding: .3125rem;
+        padding-left: .9375rem;
+        padding-right: .9375rem;
+
+        @include media-breakpoint-down(sm){
+            font-size: .75rem;
+            padding-left: .75rem;
+            padding-right: .8125rem;
+        }
+
+        &:first-child{
+            padding-left: .625rem;
+        }
+
+        &:last-child{
+            padding-right: .625rem;
+        }
+
+        &.is-small{
+            @include media-breakpoint-down(sm){
+                max-width: 3.75rem;
+                padding-right: .625rem;
+                padding-left: .625rem;
+            }
+        }
+    }
+
+    &__row{
+        text-align: center;
+    }
+
+    &__buttons{
+        padding: 1rem;
+        column-gap: 1rem;
+    }
+
+    &__table{
+        width: 100%;
+    }
+}
+
+.appointment{
+
+    &__item{
+        padding: 0px .3125rem;
+
+        @include media-breakpoint-down(sm){
+            font-size: .75rem;
+            padding: 0rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        &:nth-child(odd){
+            background-color:$fourth-color;
+        }
+
+        &:nth-child(even){
+            background-color: $third-color;
+        }
+
+        &:last-child{
+            @include media-breakpoint-down(md) {
+                background-color:$fourth-color;
+            }
+        }
+
+        &.is-small{
+            @include media-breakpoint-down(sm){
+                max-width: 3.75rem;
+            }
+        }
+    }
+
+    &__option{
+        font-size: 1.125rem;
+        padding: .3125rem;
+        text-decoration: none;
+        
+
+        @include media-breakpoint-down(sm){
+            font-size: .875rem;
+        }
+    
+        &:hover{
+            cursor: pointer;
+            
+        }
+    }
+}

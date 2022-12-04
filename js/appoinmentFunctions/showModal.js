@@ -1,16 +1,16 @@
 'use strict'
-
+import * as constants from '../commons/constants.js';
 
 /**
  * Show modal to confirm if the user want delete the appointment
  * @param {Appointment} appointment 
  */
 export default function deleteAppointmentModal(appointment){
-    const modalTitleSelector = document.getElementById('exampleModalLabel');
     const modalBodySelector = document.getElementById('modal-body');
+    const modalTitleSelector = document.getElementById('appointmentModalLabel');
+
     let modalUlElement = document.getElementById('modal-list');
     let modalSubtitleElement = document.getElementById('modal-subtitle');
-    const confirmModalButtonSelector = document.getElementById('modal-confirm-button');
     
     modalTitleSelector.innerHTML = 'Eliminar cita';
     
@@ -25,13 +25,13 @@ export default function deleteAppointmentModal(appointment){
     }
     
     modalUlElement.innerHTML= `
-    <li>Fecha y hora: ${appointment.date}</li>
+    <li>Fecha y hora: ${appointment.appointmentDate} ${appointment.appointmentHour}</li>
     <li>Nombre: ${appointment.name}</li>
     <li>Apellidos: ${appointment.surname}</li>
     <li>Teléfono: ${appointment.phone}</li>
     `;
 
-    confirmModalButtonSelector.setAttribute('data-id', appointment.id);
+    constants.confirmModalButtonSelector.setAttribute('data-id', appointment.id);
     modalSubtitleElement.textContent = `¿Desea eleminar la siguiente cita?`;
 
     modalBodySelector.appendChild(modalSubtitleElement);
