@@ -26,7 +26,7 @@
             </a>
         </section>
     </header>
-    <main class="main-container container d-flex flex-column flex-xl-row align-items-center">
+    <main class="main-container d-flex flex-column flex-xl-row align-items-center">
         <section class="d-flex align-items-center">
             <form id="appointment-form" class="form row g-3 shadow p-3 bg-body rounded">
                 <div class="d-flex justify-content-between">
@@ -72,21 +72,23 @@
             </form>
         </section>
         <section id="appointments-table" class="appointments d-flex flex-column align-items-center justify-content-between rounded shadow">
-            <table class="appointments__table">
-                <thead class="appointments__header">
-                    <tr>
-                        <th class="appointments__head-item">Fecha</th>
-                        <th class="appointments__head-item">Hora</th>
-                        <th class="appointments__head-item is-small">Nombre</th>
-                        <th class="appointments__head-item is-small">Apellidos</th>
-                        <th class="appointments__head-item test-touch">Teléfono</th>
-                        <th class="appointments__head-item">Opciones</th>
-                    </tr>
-                </thead>
-                <tbody id="appointments-body" class="appointments__body">
-                    
-                </tbody>
-            </table>
+            <div class="table-responsive w-100">
+                <table class="appointments__table table">
+                    <thead class="appointments__header">
+                        <tr>
+                            <th class="appointments__head-item">Fecha</th>
+                            <th class="appointments__head-item">Hora</th>
+                            <th class="appointments__head-item is-small">Nombre</th>
+                            <th class="appointments__head-item is-small">Apellidos</th>
+                            <th class="appointments__head-item d-none d-md-table-cell">Teléfono</th>
+                            <th class="appointments__head-item">Opciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="appointments-body" class="appointments__body">
+                        
+                    </tbody>
+                </table>
+            </div>
             <div class="appointments__buttons d-flex justify-content-around col-12">
                 <a type="button" class="btn btn-secondary d-md-none col-6" href="#appointments-header">Crear cita</a>
                 <button class="btn btn-secondary col-6 col-md-12">Ver todas las citas</button>
@@ -115,11 +117,11 @@
             </a>
         </section>
     </footer>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="appointmentModal" tabindex="-1" aria-labelledby="appointmentModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
           <div class="modal-content">
             <div class="modal-header">
-              <h1 class="modal-title fs-5" id="exampleModalLabel"></h1>
+              <h1 class="modal-title fs-5" id="appointmentModalLabel"></h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body" id="modal-body">

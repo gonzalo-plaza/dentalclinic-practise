@@ -5,8 +5,8 @@
     max-width: 37.5rem;
 
     @media (max-width: 1200px){
-        margin-top: 15px;
-        margin-bottom: 15px;
+        margin-top: .9375rem;
+        margin-bottom: .9375rem;
     }
 
     &__header{
@@ -14,29 +14,31 @@
         border-bottom: 1px solid $third-color;
     }
 
-    &__header-item{
+    &__head-item{
         padding: .3125rem;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-left: .9375rem;
+        padding-right: .9375rem;
 
         @include media-breakpoint-down(sm){
-            font-size: 12px;
-            padding-left: 12px;
-            padding-right: 13px;
+            font-size: .75rem;
+            padding-left: .75rem;
+            padding-right: .8125rem;
         }
 
         &:first-child{
-            padding-left: 10px;
+            padding-left: .625rem;
         }
 
         &:last-child{
-            padding-right: 10px;
+            padding-right: .625rem;
         }
 
         &.is-small{
-            max-width: 3.75rem;
-            padding-right: 10px;
-            padding-left: 10px;
+            @include media-breakpoint-down(sm){
+                max-width: 3.75rem;
+                padding-right: .625rem;
+                padding-left: .625rem;
+            }
         }
     }
 
@@ -60,8 +62,11 @@
         padding: 0px .3125rem;
 
         @include media-breakpoint-down(sm){
-            font-size: 11px;
-            padding: 0px;
+            font-size: .75rem;
+            padding: 0rem;
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
         }
 
         &:nth-child(odd){
@@ -73,21 +78,26 @@
         }
 
         &:last-child{
-            @include media-breakpoint-down(lg) {
+            @include media-breakpoint-down(md) {
                 background-color:$fourth-color;
             }
         }
 
         &.is-small{
-            max-width: 3.75rem;
+            @include media-breakpoint-down(sm){
+                max-width: 3.75rem;
+            }
         }
     }
 
     &__option{
-        font-size: 18px;
-        padding: 5px;
+        font-size: 1.125rem;
+        padding: .3125rem;
+        text-decoration: none;
+        
+
         @include media-breakpoint-down(sm){
-            font-size: 14px;
+            font-size: .875rem;
         }
     
         &:hover{
@@ -95,16 +105,4 @@
             
         }
     }
-}
-
-.test-touch{
-    @include media-breakpoint-down(lg) {
-        display: none;
-    }
-}
-
-.test-desk{
-    @include media-breakpoint-up(lg) { 
-        display: none !important;
-     }
 }

@@ -1,18 +1,17 @@
 'use strict'
-
+import * as dateFormat from '../appoinmentFunctions/dateFormats.js';
 export default class Appointment {
     constructor(name, surname, dni, phone, birth, date, observations){
-        this.id = String(new Date().toISOString());
+        let appointmentDate = new Date(date);
+
+        this.id = String(new Date());
         this.name = name;
         this.surname = surname;
         this.dni = dni;
         this.phone = phone;
         this.birth = birth;
-        this.date = new Date(date).toLocaleString();
+        this.appointmentDate = dateFormat.formatDate(appointmentDate);
+        this.appointmentHour = dateFormat.formatHourAndMinutes(appointmentDate);
         this.observations = observations;
-    }
-
-    get getFullDate(){
-        return this.date.toLocaleDateString();
     }
 }
