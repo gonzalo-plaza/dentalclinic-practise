@@ -23,7 +23,7 @@ export function formatDate(date, format){
 }
 
 export function formatHourAndMinutes(date){
-    debugger;
+    ;
     const hourResult = [
         convertTwoDigits(date.getHours()),
         convertTwoDigits(date.getMinutes())

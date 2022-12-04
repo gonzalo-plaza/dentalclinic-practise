@@ -32,7 +32,7 @@ export function updateAppoinmentsTable(){
         let row = document.createElement('tr');
         row.classList.add('appointments__row');
         row.setAttribute('data-id', appointments[date].id);
-        debugger;
+        ;
         let columns = `<td class="appointment__item">${appointments[date].appointmentDate}</td>
         <td class="appointment__item">${appointments[date].appointmentHour}</td>
         <td class="appointment__item is-small">${appointments[date].name}</td>

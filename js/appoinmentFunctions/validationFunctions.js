@@ -6,7 +6,7 @@
  * @returns boolean
  */
 export function checkEmptyField(element){
-    debugger;
+    ;
     if(element.value.length === 0){
         setNotValidField(element, 'El campo no puede estar vacío');
         return true;
@@ -116,7 +116,7 @@ function checkRegex(element, regex){
  */
 export function checkBeforeSubmit(nameField, surnameField, phoneField, idNumberField, birthField, appointmentDateField){
     let result = [];
-    debugger;
+    ;
     result.push(checkSimpleField(nameField));
     result.push(checkSimpleField(surnameField));
     result.push(checkFieldNumber(phoneField));
