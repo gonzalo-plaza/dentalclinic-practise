@@ -3,6 +3,7 @@ import * as formValidation from "./appoinmentFunctions/validationFunctions.js";
 import * as dateFormat from "./appoinmentFunctions/dateFormats.js";
 import Appointment from "./classes/appointmentClass.js";
 import * as constants from "./commons/constants.js";
+import '../libs/bootstrap/js/bootstrap.bundle.js';
 import {
   saveAppointment,
   updateAppoinmentsTable,
